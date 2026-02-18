@@ -107,15 +107,6 @@ users:
 
   In this project, the username is demo and the password is demo123. 
   By default, the authentication is NOT enabled.
-
-3. To generate an encrypted password, You can use (example Python snippet):
-
-```python
-import bcrypt
-print(bcrypt.hashpw(b"your_password", bcrypt.gensalt()).decode())
-```
-
-and add to the users.yaml file a new username and the corrisponding hashed password.
 ---
 
 ## 6 Run the CLI Application
@@ -162,4 +153,5 @@ quit
 ```
 
 Or just send a message stating you wish to end the conversation.
+
 ---
