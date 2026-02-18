@@ -40,6 +40,7 @@ The system converts user questions into a structured **QueryPlan (JSON)** using 
 ---
 
 # Repository Structure
+```text
 
 marketing_performance_chatbot/
 │
@@ -71,6 +72,7 @@ marketing_performance_chatbot/
 ├── ARCHITECTURE.md
 ├── QUICKSTART.md
 └── RUNBOOK.md
+```
 ---
 
 # Dataset
@@ -105,7 +107,7 @@ During loading:
 
 The LLM generates structured JSON:
 
-
+```json
 {
   "intent": "aggregate | top_n | trend | unknown",
   "metrics": ["revenue", "cost", "profit"],
@@ -122,7 +124,7 @@ The LLM generates structured JSON:
   "top_n": 5,
   "sort_by": {"field": "revenue", "direction": "desc"}
 }
-
+```
 This ensures:
 
 - No hallucinated SQL
@@ -198,7 +200,7 @@ Same but last quarter
 
 # Architectural Philosophy
 
-
+```text
 Natural Language
         ↓
 LLM → QueryPlan (JSON)
@@ -206,7 +208,7 @@ LLM → QueryPlan (JSON)
 Deterministic Pandas Engine
         ↓
 Formatted CLI Output
-
+```
 # Author
 Enrico Fazzi
 enrico.fazzi@libero.it
