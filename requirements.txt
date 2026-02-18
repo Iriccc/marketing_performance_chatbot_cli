@@ -1,0 +1,18 @@
+# Core
+pandas>=2.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# AWS Bedrock
+boto3>=1.34.0
+
+# CLI UI
+rich>=13.7.0
+
+# Optional authentication (bcrypt)
+bcrypt>=4.0.1
+
+# Validation (if using Pydantic v2 for QueryPlan)
+pydantic>=2.5.0
+# Logging & typing
+typing-extensions>=4.8.0

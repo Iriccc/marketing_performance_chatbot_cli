@@ -1,0 +1,4 @@
+users:
+  - username: demo
+    password_hash: "$2b$12$2aGJ.E0TDvb1LLIAgnXO8O5GT3joPmay3RyuBqDVMqvmXXlOop/Ui" #password is: demo123
+    
