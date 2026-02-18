@@ -206,3 +206,7 @@ LLM → QueryPlan (JSON)
 Deterministic Pandas Engine
         ↓
 Formatted CLI Output
+
+# Author
+Enrico Fazzi
+enrico.fazzi@libero.it
