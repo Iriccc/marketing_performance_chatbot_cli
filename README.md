@@ -78,7 +78,7 @@ marketing_performance_chatbot/
 # Dataset
 
 Expected CSV columns:
-
+```text
 Year
 Quarter
 Month
@@ -93,7 +93,7 @@ Product
 Campaign Name
 Revenue
 Cost
-
+```
 During loading:
 
 - Columns normalized to snake_case
@@ -140,7 +140,7 @@ Follow-ups are handled by the LLM using:
 - Previous QueryPlan JSON
 
 Examples:
-
+```text
 Total revenue in 2022?
 Now only for Country = Italy
 Same but last quarter
@@ -148,6 +148,7 @@ Ok, and in Q3?
 Show trend for the last 3 years
 
 The model rewrites the previous plan accordingly.
+```
 ---
 
 # Optional Authentication
@@ -160,11 +161,11 @@ ENABLE_AUTH=true
 
 Create `users.yaml`:
 
-yaml
+```yaml
 users:
   - username: demo
     password_hash: "<bcrypt-hash>"
-
+```
 Passwords are bcrypt hashed.
 ---
 
@@ -189,13 +190,14 @@ QUICKSTART.md or DEMO.md
 ---
 
 # Example Questions
-
+```text
 Total revenue in 2024?
 Top 5 campaign names by revenue last quarter
 Revenue and cost trend by month in 2023
 Which media categories had the highest profit in Q2 2023?
 Now only for Product = X
 Same but last quarter
+```
 ---
 
 # Architectural Philosophy
