@@ -6,15 +6,17 @@ This guide explains how to quickly run the **Marketing Performance Chatbot (CLI 
 
 ### macOS / Linux
 
-bash
+```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
+```
 
 ### Windows (PowerShell)
 
-bash
+```bash
 py -3.11 -m venv .venv
 .venv\Scripts\Activate
+```
 
 Python 3.11 is recommended.  
 Python 3.12 also works.
@@ -22,9 +24,10 @@ Python 3.12 also works.
 
 ## 2 Install Dependencies
 
-bash
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
 
 Core dependencies include:
 
@@ -40,11 +43,14 @@ Core dependencies include:
 ## 3 Configure Environment Variables
 
 Copy the example file:
-bash
+
+```bash
 cp .env.example .env
+```
 
 Edit `.env`:
 
+```env
 APP_TITLE=Marketing Performance Chatbot
 DATASET_PATH=marketing_data.csv
 
@@ -56,14 +62,17 @@ MAX_HISTORY_USER=5
 MAX_HISTORY_BOT=5
 
 ENABLE_AUTH=false
+```
+
 ---
 
 ## 4 Configure AWS (Bedrock)
 
 Make sure you have AWS CLI configured:
 
-bash
+```bash
 aws configure
+```
 
 Provide:
 
@@ -73,7 +82,9 @@ Provide:
 
 You must have permission:
 
+```
 bedrock:InvokeModel
+```
 ---
 
 ## 5 Optional: Enable Authentication
@@ -82,22 +93,26 @@ If you want login enabled:
 
 1. Set in `.env`:
 
+```env
 ENABLE_AUTH=true
+```
 
 2. Create `users.yaml`:
 
-yaml
+```yaml
 users:
   - username: demo
     password_hash: "<bcrypt-hash>"
+```
 
 In this project, the username is demo and the password is demo123. By default, the authentication is NOT enabled.
 
 3. To generate an encrypted password, You can use (example Python snippet):
 
-python
+```python
 import bcrypt
 print(bcrypt.hashpw(b"your_password", bcrypt.gensalt()).decode())
+```
 
 and add to the users.yaml file a new username and the corrisponding hashed password.
 ---
@@ -106,30 +121,44 @@ and add to the users.yaml file a new username and the corrisponding hashed passw
 
 From project root:
 
-bash
+```bash
 python -m app.main
+```
 
 You will see:
 
+```
 Marketing Performance Chatbot
 Type your question (or 'exit' to quit):
+```
+
 ---
 
 ## 7 Example Questions
 
 Try:
 
+```
 Total revenue in 2022?
 Top 5 campaign names by revenue last quarter
 Revenue and cost trend by month in 2023
+```
+
 ---
 
 ## 8 Exit the Application
 
 Type:
+
+```
 exit
+```
+
 or
+
+```
 quit
+```
 
 Or just send a message stating you wish to end the conversation.
 ---
