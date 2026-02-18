@@ -185,7 +185,6 @@ Logs include:
 # Running the Project
 
 See:
-
 QUICKSTART.md or DEMO.md
 ---
 
