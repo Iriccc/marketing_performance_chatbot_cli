@@ -9,6 +9,7 @@ The goal is to demonstrate:
 - Out-of-scope handling
 - Conversation termination
 - Provenance output
+  
 ---
 
 ## 1 Start the Application
@@ -29,6 +30,7 @@ Password: ********    demo123 is the only valid password at the moment
 ```
 
 If authentication is disabled, the CLI starts immediately.
+
 ---
 
 ## 2 Basic Aggregate Question
@@ -54,6 +56,7 @@ Result (total): revenue: 30,357,817.33
 Data used: 4321 rows, date range 2022-01-03 -> 2022-12-26.
 Sample row_id(s): a9697a7fe717a004, cde1a15f66060a74, 74da1dbfd2a8f17c
 ```
+
 ---
 
 ## 3 Top-N Ranking
@@ -91,6 +94,7 @@ Top results:
 Data used: 1157 rows, date range 2023-04-03 -> 2023-06-26.
 Sample row_id(s): e6aee7bf664f7b3e, c7e25492b193c402
 ```
+
 ---
 
 ## 4 Follow-Up Question
@@ -121,6 +125,7 @@ I couldn't find any rows matching your request.
 
 Try changing the year/quarter or removing some filters.
 ```
+
 ---
 
 ## 5 Time-Based Follow-Up
@@ -138,6 +143,7 @@ Planner modifies only:
 ```
 
 Execution happens deterministically via pandas.
+
 ---
 
 ## 6 Trend Example
@@ -177,6 +183,7 @@ year | month | revenue
 2022 | 2     | ...
 ...
 ```
+
 ---
 
 ## 7 Last N Years Example
@@ -194,6 +201,7 @@ Planner generates:
 ```
 
 Execution filters the last 3 available years and groups by year.
+
 ---
 
 ## 8 Meta Question
@@ -213,6 +221,7 @@ I can extract data, compute totals, identify trends,
 rank campaigns, and apply filters to the marketing dataset.
 I cannot provide graphics or external information.
 ```
+
 ---
 
 ## 9 Conversation History Question
@@ -228,6 +237,7 @@ Classifier -> route="meta"
 Planner not involved.
 
 LLM uses conversation memory to answer.
+
 ---
 
 ## 10 Out-of-Scope Question
@@ -246,6 +256,7 @@ Response:
 I can only answer questions related to the marketing dataset.
 Please ask about revenue, campaigns, trends, or filters.
 ```
+
 ---
 
 ## 11 Terminating the Conversation
@@ -274,6 +285,7 @@ Session closed. Goodbye.
 ```
 
 CLI loop exits.
+
 ---
 
 ## 12 Debugging (Logging)
@@ -293,6 +305,7 @@ This allows to verify easily:
 - LLM JSON correctness
 - routing decisions
 - follow-up handling
+  
 ---
 
 ## 13 Testing
@@ -310,6 +323,7 @@ pip install -r requirements-dev.txt
 ```
 
 (Ensure `pytest` is installed.)
+
 ---
 
 ### Run all tests
@@ -325,6 +339,7 @@ You should see output similar to:
 ```
 4 passed in 1.12s
 ```
+
 ---
 
 ## 14 Determinism
@@ -336,6 +351,7 @@ Important architecture rule:
 - Pandas performs ALL calculations
 - ResponseBuilder formats results
 - Provenance always shown
+
 ---
 
 ## Summary
@@ -349,4 +365,3 @@ This demo shows that the system supports:
 - Follow-ups
 - Meta questions
 - Out-of-scope handling
-```
