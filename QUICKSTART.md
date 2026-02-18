@@ -104,9 +104,9 @@ users:
   - username: demo
     password_hash: "<bcrypt-hash>"
 ```
+In this project, the username is demo and the password is demo123. 
+By default, the authentication is NOT enabled.
 
-  In this project, the username is demo and the password is demo123. 
-  By default, the authentication is NOT enabled.
 ---
 
 ## 6 Run the CLI Application
