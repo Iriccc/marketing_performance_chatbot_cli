@@ -20,6 +20,7 @@ py -3.11 -m venv .venv
 
 Python 3.11 is recommended.  
 Python 3.12 also works.
+
 ---
 
 ## 2 Install Dependencies
