@@ -2,7 +2,7 @@
 
 This project answers natural-language questions about `marketing_data.csv`.
 
-It converts user questions into a structured **QueryPlan (JSON)** using an LLM (AWS Bedrock Claude), then executes that plan deterministically using pandas.
+It converts user questions into a structured **QueryPlan (JSON)** using an **LLM** (AWS Bedrock Claude), then executes that plan deterministically using **pandas**.
 
 **Important:** the LLM never computes numbers. It only generates a plan. All metrics are computed locally.
 
@@ -14,8 +14,10 @@ It converts user questions into a structured **QueryPlan (JSON)** using an LLM (
 
 The CSV is expected to contain:
 
+```
 "Year","Quarter","Month","Week","Date","Country","Media Category","Media Name","Communication",
 "Campaign Category","Product","Campaign Name","Revenue","Cost"
+```
 
 ### Normalized columns (snake_case)
 
@@ -103,15 +105,17 @@ Allowed group-by dimensions:
 
 ### time_range
 
+```json
 {
   "type": "all | year | quarter | last_quarter | last_n_years",
   "year": 2022,
   "quarter": 2,
   "n_years": 3
 }
-
+```
 
 Rules:
+
 - type="all" -> ignore year/quarter/n_years
 - type="year" -> year required
 - type="quarter" -> year and quarter required
@@ -122,23 +126,23 @@ Rules:
 
 Equality only:
 
-
+```json
 [
   { "field": "country", "op": "=", "value": "Denmark" },
   { "field": "product", "op": "=", "value": "X" }
 ]
-
+```
 
 ### top_n and sort_by
 
 Used for intent="top_n":
 
-
+```json
 {
   "top_n": 5,
   "sort_by": { "field": "revenue", "direction": "desc" }
 }
-
+```
 
 ---
 
@@ -146,7 +150,7 @@ Used for intent="top_n":
 
 ### Example A — Total revenue in 2024
 
-
+```json
 {
   "intent": "aggregate",
   "metrics": ["revenue"],
@@ -156,11 +160,11 @@ Used for intent="top_n":
   "top_n": null,
   "sort_by": null
 }
-
+```
 
 ### Example B — Top 5 campaigns by revenue last quarter
 
-
+```json
 {
   "intent": "top_n",
   "metrics": ["revenue"],
@@ -170,11 +174,11 @@ Used for intent="top_n":
   "top_n": 5,
   "sort_by": { "field": "revenue", "direction": "desc" }
 }
-
+```
 
 ### Example C — Revenue and cost trend by month in 2022
 
-
+```json
 {
   "intent": "trend",
   "metrics": ["revenue", "cost"],
@@ -184,7 +188,7 @@ Used for intent="top_n":
   "top_n": null,
   "sort_by": null
 }
-
+```
 
 ---
 
@@ -241,7 +245,7 @@ Memory is intentionally small to keep context stable and predictable.
 
 ## 8. High-level architecture diagram
 
-
+```
 User (CLI)
   |
   v
@@ -259,7 +263,7 @@ ResponseBuilder (summary + provenance)
   |
   v
 Terminal output (Rich tables)
-
+```
 
 ---
 
