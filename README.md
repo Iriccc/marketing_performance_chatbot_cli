@@ -167,6 +167,7 @@ users:
     password_hash: "<bcrypt-hash>"
 ```
 Passwords are bcrypt hashed.
+
 ---
 
 # Logging
@@ -180,12 +181,14 @@ Logs include:
 - Parsed QueryPlan
 - Validation errors
 - Execution summaries
+  
 ---
 
 # Running the Project
 
 See:
-QUICKSTART.md or DEMO.md
+**QUICKSTART.md** or **DEMO.md**
+
 ---
 
 # Example Questions
@@ -197,6 +200,7 @@ Which media categories had the highest profit in Q2 2023?
 Now only for Product = X
 Same but last quarter
 ```
+
 ---
 
 # Architectural Philosophy
@@ -210,6 +214,10 @@ Deterministic Pandas Engine
         ↓
 Formatted CLI Output
 ```
+
+---
+
 # Author
 Enrico Fazzi
+
 enrico.fazzi@libero.it
