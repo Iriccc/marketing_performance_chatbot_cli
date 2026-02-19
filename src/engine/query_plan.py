@@ -100,9 +100,3 @@ class QueryPlan(BaseModel):
 
     top_n: Optional[int] = None
     sort_by: Optional[SortBy] = None
-
-    def is_followup_candidate(self) -> bool:
-        """
-        Returns True if the plan looks like a valid previous request to modify.
-        """
-        return self.intent != "unknown"
