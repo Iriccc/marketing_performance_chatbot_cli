@@ -64,7 +64,7 @@ class Settings:
         return raw.strip().lower() in ("true", "1", "yes", "y", "on")
     
     @classmethod
-    def from_env(cls) -> "Settings":
+    def from_env(cls) -> Settings:
         """
         Method used to construct Settings from environment variables.
         """
