@@ -75,7 +75,7 @@ class DatasetSchema:
     row_id_hash_columns: List[str]
 
     @classmethod
-    def marketing_default(cls) -> "DatasetSchema":
+    def marketing_default(cls) -> DatasetSchema:
         return cls(
             raw_columns=RAW_COLUMNS,
             rename_map=RENAME_MAP,
